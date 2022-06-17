@@ -1,0 +1,12 @@
+all: autotest.o karatsuba.o
+	g++ autotest.o karatsuba.o -o autotest.out
+
+usertest.o: usertest.cpp karatsuba.h
+	g++ -c usertest.cpp
+
+karatsuba.o: karatsuba.cpp karatsuba.h
+	g++ -c karatsuba.cpp
+
+clean:
+	rm *.o
+	rm *.out
